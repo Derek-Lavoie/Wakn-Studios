@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Editor": {
+      "commandName": "Executable",
+      "executablePath": "F:/SteamLibrary/steamapps/common/sbox/sbox-dev.exe",
+      "commandLineArgs": "-project \u0022c:\\users\\slump\\onedrive\\documents\\s\u0026box projects\\fleethebeast\\fleethebeast.sbproj\u0022"
+    }
+  }
+}

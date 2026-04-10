@@ -48,6 +48,10 @@ public partial class HackableComputer : Component
 		if ( IsLockedOut ) return;
 		if ( ActiveHacker is not null && ActiveHacker != caller ) return;
 
+		var callerRole = Scene.GetAll<PlayerRole>()
+			.FirstOrDefault( r => r.Network.Owner == caller );
+		if ( callerRole is not null && callerRole.IsBeast ) return;
+
 		ActiveHacker = caller;
 		ActiveHackerId = caller.SteamId;
 

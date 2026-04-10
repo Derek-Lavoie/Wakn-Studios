@@ -61,6 +61,10 @@ public partial class GameManager : Component, Component.INetworkListener
 		BeastId = beast.GameObject.Id;
 		beastPicked = true;
 
+		var role = beast.GameObject.Components.Get<PlayerRole>();
+		if ( role is { } r )
+			r.IsBeast = true;
+
 		Log.Info( $"Beast chosen: {beast.GameObject.Name}" );
 
 		AnnounceBeast();

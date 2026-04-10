@@ -77,6 +77,10 @@ public sealed class HackingHud : Component
 
 	private void HandleInteraction()
 	{
+		var role = Components.Get<PlayerRole>( FindMode.EverythingInSelfAndDescendants );
+		if ( role is not null && role.IsBeast ) return;
+		if ( role is not null && role.IsKnockedOut ) return;
+
 		var cam = Scene.Camera;
 		if ( cam is null ) return;
 
